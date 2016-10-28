@@ -37,6 +37,7 @@ public class PickerView extends PopupWindow implements View.OnClickListener {
     private String firstText;
     private String secondText;
     private String thirdText;
+
     public PickerView(Activity context, String[] mFirstDatas, Map<String, String[]> mSecondDatas, Map<String, String[]> mThirdDatas) {
         super(context);
         this.context = context;
