@@ -17,10 +17,10 @@
 |方法名|描述
 |---|---|
 |setFirstDatas(String[] mFirstDatas)| 第一级菜单数组
-|setSecondDatas(Map<String, String[]> mSecondDatas)| 第二级菜单map，key对应上一级value
-|setThirdDatas(Map<String, String[]> mSecondDatas)| 第三级菜单map，key对应上一级value
-|setFourthDatas(Map<String, String[]> mSecondDatas)| 第四级菜单map，key对应上一级value
-|setHeight(int height)| 设置弹出框高度
+|setSecondDatas(Map<String , String[]> mSecondDatas)| 第二级菜单map，key对应上一级value
+|setThirdDatas(Map<String , String[]> mSecondDatas)| 第三级菜单map，key对应上一级value
+|setFourthDatas(Map<String , String[]> mSecondDatas)| 第四级菜单map，key对应上一级value
+|setHeight(int height)| 设置选择器高度
 |setInitSelectText(...)| 设置默认显示的数据(参数顺序对应层级顺序，参数个数可以自己选择)
 |getFirstText()| 获取第一级选择结果
 |getSecondText()| 获取第二级选择结果
@@ -34,12 +34,14 @@
 |---|---|
 |PickerView(Activity context, PickerData pickerData)| 构造方法传入上下文和封装的数据
 |setOnPickerClickListener(OnPickerClickListener listener)| 设置点击事件
+|show(View view)| 显示选择器
+|dismiss()| 关闭选择器
 
 ##PickerView点击事件方法
 |方法名|描述
 |---|---|
 |OnPickerClick(PickerData pickerData)| 数据展示列表点击事件，实时返回选择结果
-|OnPickerConfirmClick(PickerData pickerData)| 点击确定按钮的回调事件，点击后自动关闭弹出框，返回选择结果
+|OnPickerConfirmClick(PickerData pickerData)| 点击确定按钮的回调事件，点击后自动关闭选择器，返回选择结果
 
 ##使用步骤 
 
@@ -83,7 +85,7 @@ protected void onCreate(Bundle savedInstanceState) {
        }
     });
     
-    //选择器完成三级选择后点击回调
+    //选择器点击回调
     pickerView.setOnPickerClickListener(new OnPickerClickListener() {
        //选择列表时触发的事件
        @Override
