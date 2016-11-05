@@ -63,6 +63,7 @@ compile project(':PickerView')
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+    
     //选择器数据实体类封装
     PickerData data=new PickerData();
     //设置数据，有多少层级自己确定
@@ -74,6 +75,7 @@ protected void onCreate(Bundle savedInstanceState) {
     data.setHeight(高度);
     //设置初始化默认显示的菜单(此方法可以选择传参数量1到4个)
     data.setInitSelectText("河北省","石家庄市","平山县");
+    
     //初始化选择器
     pickerView=new PickerView(this,data);
     
@@ -87,10 +89,9 @@ protected void onCreate(Bundle savedInstanceState) {
     
     //选择器点击回调
     pickerView.setOnPickerClickListener(new OnPickerClickListener() {
-       //选择列表时触发的事件
+       //选择列表时触发的事件（手动关闭）
        @Override
        public void OnPickerClick(PickerData pickerData) {
-           //想获取单个选择项 PickerData内也有方法（弹出框手动关闭）
            text.setText(pickerData.getSelectText());
            pickerView.dismiss();//关闭选择器
        }
