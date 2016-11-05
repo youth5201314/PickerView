@@ -1,3 +1,3 @@
 <resources>
-    <string name="app_name">PickerView</string>
+    <string name="text_no_song">无数据</string>
 </resources>

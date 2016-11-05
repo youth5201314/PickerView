@@ -18,7 +18,7 @@ public class DataAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return mDatas.length;
+        return mDatas==null ? 0 :mDatas.length;
     }
 
     @Override
@@ -28,7 +28,7 @@ public class DataAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override

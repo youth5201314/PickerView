@@ -1,5 +1,8 @@
 package com.youth.picker.listener;
 
+import com.youth.picker.entity.PickerData;
+
 public interface OnPickerClickListener {
-    public void OnPickerClick(String firstText, String secondText, String thirdText);
+    public void OnPickerClick(PickerData pickerData);
+    public void OnPickerConfirmClick(PickerData pickerData);
 }
