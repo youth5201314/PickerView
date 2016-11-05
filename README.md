@@ -8,11 +8,38 @@
 只要是类似城市选择的层级形式都行，比如电商菜单分类啊等等。目前最多支持4级菜单。
 
 
-
 ### 联系方式  <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=KBkYGhAfGhEYEB5oWVkGS0dF" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_11.png"/></a>
 ![效果示例](http://oceh51kku.bkt.clouddn.com/Android%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
 * 如果遇到问题和建议欢迎在给我发送邮件或者加入qq群，希望让这个工程越来越完善。
 
+
+##PickerData方法
+|方法名|描述
+|---|---|
+|setFirstDatas(String[] mFirstDatas)| 第一级菜单数组
+|setSecondDatas(Map<String, String[]> mSecondDatas)| 第二级菜单map，key对应上一级value
+|setThirdDatas(Map<String, String[]> mSecondDatas)| 第三级菜单map，key对应上一级value
+|setFourthDatas(Map<String, String[]> mSecondDatas)| 第四级菜单map，key对应上一级value
+|setHeight(int height)| 设置弹出框高度
+|setInitSelectText(参数顺序对应层级顺序，参数个数可以自己选择)| 设置默认显示的数据
+|getFirstText()| 获取第一级选择结果
+|getSecondText()| 获取第二级选择结果
+|getThirdText()| 获取第三级选择结果
+|getFourthText()| 获取第四级选择结果
+|getSelectText()| 获取完整选择的结果（拼接后结果）
+|getCurrDatas(int index,String currText)| 通过当前key获取指定层级的values数组
+
+##PickerView方法
+|方法名|描述
+|---|---|
+|PickerView(Activity context, PickerData pickerData)| 构造方法传入上下文和封装的数据
+|setOnPickerClickListener(OnPickerClickListener listener)| 设置点击事件
+
+##PickerView点击事件方法
+|方法名|描述
+|---|---|
+|OnPickerClick(PickerData pickerData)| 数据展示列表点击事件，实时返回选择结果
+|OnPickerConfirmClick(PickerData pickerData)| 点击确定按钮的回调事件，点击后自动关闭弹出框，返回选择结果
 
 ##使用步骤 
 
@@ -47,6 +74,7 @@ protected void onCreate(Bundle savedInstanceState) {
     data.setInitSelectText("河北省","石家庄市","平山县");
     //初始化选择器
     pickerView=new PickerView(this,data);
+    
     点击按钮View.setOnClickListener(new View.OnClickListener() {
        @Override
        public void onClick(View v) {
@@ -54,6 +82,7 @@ protected void onCreate(Bundle savedInstanceState) {
            pickerView.show(点击按钮View);
        }
     });
+    
     //选择器完成三级选择后点击回调
     pickerView.setOnPickerClickListener(new OnPickerClickListener() {
        //选择列表时触发的事件
