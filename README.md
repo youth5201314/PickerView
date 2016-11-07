@@ -7,6 +7,9 @@
 现在的绝大数app的地址选择器都是三级联动或者滚轮选择的形式，刚刚公司开发的项目弄了个新的交互，当然不仅仅可以用于省市区的选择，
 只要是类似城市选择的层级形式都行，比如电商菜单分类啊等等。目前最多支持4级菜单。
 
+##效果预览
+![效果示例](http://oceh51kku.bkt.clouddn.com/PickerView.gif)
+
 
 ### 联系方式  <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=KBkYGhAfGhEYEB5oWVkGS0dF" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_11.png"/></a>
 ![效果示例](http://oceh51kku.bkt.clouddn.com/Android%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
