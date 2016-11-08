@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,7 @@ public class PickerView extends PopupWindow implements View.OnClickListener {
     private RadioGroup groupSelect;
     private ListView pickerList;
     private TextView emptyView;
+    private TextView pickerTitleName;
     private TextView pickerConfirm;
     private View view;
     private int index = 1;
@@ -79,6 +81,7 @@ public class PickerView extends PopupWindow implements View.OnClickListener {
     }
 
     private void initView() {
+        pickerTitleName = (TextView) view.findViewById(R.id.pickerTitleName);
         pickerConfirm = (TextView) view.findViewById(R.id.pickerConfirm);
         groupSelect = (RadioGroup) view.findViewById(R.id.groupSelect);
         mTextFirst = (RadioButton) view.findViewById(R.id.mTextFirst);
@@ -92,6 +95,9 @@ public class PickerView extends PopupWindow implements View.OnClickListener {
         mTextSecond.setOnClickListener(this);
         mTextThird.setOnClickListener(this);
         pickerConfirm.setOnClickListener(this);
+        if (!TextUtils.isEmpty(pickerData.getPickerTitleName())){
+            pickerTitleName.setText(pickerData.getPickerTitleName());
+        }
     }
 
     public void show(View view) {
@@ -194,15 +200,17 @@ public class PickerView extends PopupWindow implements View.OnClickListener {
         }
         public void invoke() {
             if (!data.isEmpty()) {
-                currData = pickerData.getCurrDatas(index+1, text);
-                adapter.setList(currData);
-                if (currData == null) {
+                String[] data = pickerData.getCurrDatas(index+1, text);
+                if (data!=null&&data.length>0) {
+                    currData = data;
+                    adapter.setList(currData);
+                    index ++;
+                }else {
                     if (listener != null) {
                         listener.OnPickerClick(pickerData);
                     }
-                } else {
-                    index ++;
                 }
+
             } else {
                 if (listener != null) {
                     listener.OnPickerClick(pickerData);

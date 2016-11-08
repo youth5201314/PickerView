@@ -24,6 +24,7 @@
 |setThirdDatas(Map<String , String[]> mSecondDatas)| 第三级菜单map，key对应上一级value
 |setFourthDatas(Map<String , String[]> mSecondDatas)| 第四级菜单map，key对应上一级value
 |setHeight(int height)| 设置选择器高度
+|setPickerTitleName(String pickerTitleName)| 设置选择器标题
 |setInitSelectText(...)| 设置默认显示的数据(参数顺序对应层级顺序，参数个数可以自己选择)
 |getFirstText()| 获取第一级选择结果
 |getSecondText()| 获取第二级选择结果
@@ -52,7 +53,7 @@
 Gradle 
 ```groovy
 dependencies{
-    compile 'com.youth.picker:pickerview:0.0.8@aar'
+    compile 'com.youth.picker:pickerview:0.0.9@aar'
 }
 ```
 或者引用本地lib

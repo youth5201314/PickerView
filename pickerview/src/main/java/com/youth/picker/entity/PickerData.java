@@ -15,7 +15,9 @@ public class PickerData {
     private String secondText="";
     private String thirdText="";
     private String fourthText="";
+    private String pickerTitleName="";
     private int height=0;
+
     /**
      * 获取当前的列表
      * @param index 当前层级
@@ -76,8 +78,18 @@ public class PickerData {
                 break;
         }
     }
+
     public String getSelectText() {
         return firstText+secondText+thirdText+fourthText;
+    }
+
+
+    public String getPickerTitleName() {
+        return pickerTitleName;
+    }
+
+    public void setPickerTitleName(String pickerTitleName) {
+        this.pickerTitleName = pickerTitleName;
     }
 
     public int getHeight() {
