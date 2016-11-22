@@ -46,7 +46,7 @@ public class MainActivity extends BaseActivity {
         data.setThirdDatas(mDistrictDatasMap);
         data.setFourthDatas(new HashMap<String, String[]>());
         //设置初始化默认显示的三级菜单(此方法可以选择传参数量1到4个)
-        data.setInitSelectText("河北省","石家庄市","平山县");
+//        data.setInitSelectText("河北省","石家庄市","平山县");
         //初始化选择器
         pickerView=new PickerView(this,data);
         show_city_selecter.setOnClickListener(new View.OnClickListener() {

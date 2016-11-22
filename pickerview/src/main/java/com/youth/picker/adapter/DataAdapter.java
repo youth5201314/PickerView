@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.youth.picker.R;
+
 
 public class DataAdapter extends BaseAdapter {
     private String[] mDatas;
@@ -33,10 +35,8 @@ public class DataAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        TextView textView=new TextView(context);
-        textView.setTextSize(16f);
-        textView.setTextColor(Color.GRAY);
-        textView.setPadding(10,10,10,10);
+        convertView=View.inflate(context, R.layout.data_textview,null);
+        TextView textView= (TextView) convertView.findViewById(R.id.data_text);
         textView.setText(mDatas[position]);
         return textView;
     }

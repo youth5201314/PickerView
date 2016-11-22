@@ -53,7 +53,7 @@
 Gradle 
 ```groovy
 dependencies{
-    compile 'com.youth.picker:pickerview:0.0.9@aar'
+    compile 'com.youth.picker:pickerview:0.1.1@aar'
 }
 ```
 或者引用本地lib
@@ -108,3 +108,4 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 
 ```
+

@@ -43,15 +43,14 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/mTextFirst"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp"
                 android:background="@drawable/tab_indicator_selector"
                 android:button="@null"
                 android:textColor="@drawable/text_selecter"
@@ -105,7 +104,8 @@
         android:id="@+id/pickerList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@null" />
+        android:divider="@null"
+        />
 
     <TextView
         android:id="@+id/picker_list_empty_data"
