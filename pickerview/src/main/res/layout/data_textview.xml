@@ -5,4 +5,4 @@
     android:layout_height="wrap_content"
     android:padding="10dp"
     android:textSize="15sp"
-    android:textColor="@android:color/darker_gray"/>
+    android:textColor="@color/picker_text_color"/>

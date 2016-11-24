@@ -7,6 +7,8 @@
 现在的绝大数app的地址选择器都是三级联动或者滚轮选择的形式，刚刚公司开发的项目弄了个新的交互，当然不仅仅可以用于省市区的选择，
 只要是类似城市选择的层级形式都行，比如电商菜单分类啊等等。目前最多支持4级菜单。
 
+`控件比较冷门，所以就没有封装的特别精细，如果不符合你们可以自行修改哈！我就提供一种思路`
+
 ##效果预览
 ![效果示例](http://oceh51kku.bkt.clouddn.com/PickerView.gif)
 
@@ -53,7 +55,7 @@
 Gradle 
 ```groovy
 dependencies{
-    compile 'com.youth.picker:pickerview:0.1.1@aar'
+    compile 'com.youth.picker:pickerview:0.1.4@aar'
 }
 ```
 或者引用本地lib
@@ -108,4 +110,20 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 
 ```
-
+###修改字体颜色
+在自己工程的color.xml中定义就行了！
+```xml
+    列表和默认的提示颜色
+    <color name="picker_text_color">#878787</color>
+    选中颜色
+    <color name="picker_select_text_color">#03a9f4</color>
+    标题颜色
+    <color name="picker_title_text_color">#000000</color>
+    分割线颜色
+    <color name="picker_border_color">#e5e5e5</color>
+```
+###修改选中指示器颜色
+由于控件比较冷门就没有封装的特别好，不过你可以在drawable文件夹里放入你想要的指示器图片（.9图片哦！），
+命名tab_indicator.9.png就行了！不清楚怎么花9patch的图片得看下面：
+<br>
+![tab_indicator.9.png例子截图](http://oceh51kku.bkt.clouddn.com/picker_tab_indicator.png)
